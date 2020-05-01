@@ -33,7 +33,7 @@ task geoserver(type: Exec) {
 }
 
 // prevent that the tests target can be directly called. the integration tests
-// must be run with `./gradlew examples:farmIntegrationTest` to make sure the
+// must be run with `./gradlew examples:geoserver` to make sure the
 // server is running
 test {}
 test.onlyIf { false }
@@ -55,7 +55,6 @@ task integrationTest(type: Test) {
 integrationTest.dependsOn ':core:compileJava', 'geoserver'
 
 afterEvaluate {
-    build.dependsOn project.tasks['farmIntegrationTest']
+    build.dependsOn project.tasks['geoserver']
     farmRun.dependsOn geoserver
-    farmBeforeIntegrationTest.dependsOn geoserver
 }
