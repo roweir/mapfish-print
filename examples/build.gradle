@@ -54,5 +54,5 @@ task integrationTest(type: Test) {
 integrationTest.dependsOn ':core:compileJava', 'geoserver'
 
 afterEvaluate {
-    build.dependsOn project.tasks['geoserver']
+    build.dependsOn project.tasks['integrationTest']
 }
