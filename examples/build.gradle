@@ -37,7 +37,7 @@ task geoserverSleep(type: Exec) {
 
 task geoserver(type: Exec) {
     description 'Run and wait for GeoServer with test data'
-    commandLine 'curl', 'http://localhost:8080'
+    commandLine 'curl', 'http://localhost:8080/web/'
     dependsOn 'geoserverSleep'
 }
 
