@@ -4,9 +4,9 @@ xmlns:gml="http://www.opengis.net/gml"
 xmlns:ogc="http://www.opengis.net/ogc"
 xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
 xs:schemaLocation="pluginSchema /data/capabilities/validate/pluginSchema.xsd">
-	<name>Geometry Within Geometry</name>
-	<description> A geometry is within another Geometry.</description>
-	<class>
-		org.geotools.validation.spatial.relate.WithinIntegrity
-	</class>
+    <name>Geometry Within Geometry</name>
+    <description> A geometry is within another Geometry.</description>
+    <class>
+        org.geotools.validation.spatial.relate.WithinIntegrity
+    </class>
 </plugin>

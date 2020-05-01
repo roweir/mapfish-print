@@ -18,9 +18,9 @@
       <wfs:Value>
         <gml:MultiLineString srsName="http://www.opengis.net/gml/srs/epsg.xml#4326">
           <gml:lineStringMember>
-          	<gml:LineString>
-            	<gml:coordinates>500000,5450000,0 540000,5450000,0</gml:coordinates>
-          	</gml:LineString>
+              <gml:LineString>
+                <gml:coordinates>500000,5450000,0 540000,5450000,0</gml:coordinates>
+              </gml:LineString>
           </gml:lineStringMember>
         </gml:MultiLineString>
       </wfs:Value>
