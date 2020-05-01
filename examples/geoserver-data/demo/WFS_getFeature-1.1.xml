@@ -6,7 +6,7 @@
 <!--
     This particular Query will return the topp:states with the FID (unique ID)
     of 'states:3'. (Thats Delaware)
-    
+
     You can also try a filter like:
           <PropertyIsEqualTo>
                 <PropertyName>STATE_NAME</PropertyName>

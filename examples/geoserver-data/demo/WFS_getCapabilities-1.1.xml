@@ -4,10 +4,10 @@
       This will briefly describe all the layers (FeatureTypes) in that you have
       in your WFS server, plus more generic information about what your server
       supports.
-      
-      For more information about a particular FeatureType, use the 
+
+      For more information about a particular FeatureType, use the
       WFS_describeFeatureType.xml demo!
-      
+
   -->
 <GetCapabilities
   service="WFS"

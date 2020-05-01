@@ -17,9 +17,9 @@
          <Fill>
             <!-- CssParameters allowed are fill (the color) and fill-opacity -->
             <CssParameter name="fill">#66FF66</CssParameter>
-         </Fill>   
+         </Fill>
             <Stroke/>
-                
+
         </PolygonSymbolizer>
       </Rule>
     </FeatureTypeStyle>

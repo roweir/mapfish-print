@@ -1,6 +1,6 @@
 <!-- We include this transaction as a sample for deletes.        -->
 <!--
-      YOU PROBABLY DO NOT WANT TO RUN THIS QUERY SINCE 
+      YOU PROBABLY DO NOT WANT TO RUN THIS QUERY SINCE
        IT WILL MODIFY YOUR SOURCE DATA FILES
   -->
 <wfs:Transaction service="WFS" version="1.0.0"
@@ -17,4 +17,4 @@
     </ogc:Filter>
   </wfs:Delete>
 </wfs:Transaction>
- 
+

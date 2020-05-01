@@ -13,7 +13,7 @@ At the time of writing we're shipping with OpenLayers 2.8
 Update this file every time you upgrade to track what's the
 current version of OpenLayers we ship with.
 
-This compressed build is a build of the full OpenLayers library.  
+This compressed build is a build of the full OpenLayers library.
 For production environments, it will likely be appropriate to use
 a smaller build profile.
 

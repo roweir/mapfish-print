@@ -20,14 +20,14 @@
         function init(){
             map = new OpenLayers.Map('map');
             var political = new OpenLayers.Layer.WMS(
-                "State", 
+                "State",
                 "/geoserver/wms",
                 {layers: 'topp:tasmania_state_boundaries',
                  format: 'image/png'}
             );
 
             var water = new OpenLayers.Layer.WMS(
-                "Water", 
+                "Water",
                 "/geoserver/wms",
                 {
                     layers: 'topp:tasmania_water_bodies',
@@ -37,16 +37,16 @@
             );
 
             var roads = new OpenLayers.Layer.WFS(
-                "Roads", 
+                "Roads",
                 "/geoserver/wfs",
                 {typename: 'topp:tasmania_roads'},
                 {
-                    typename: 'tasmania_roads', 
-                    featureNS: 'http://www.openplans.org/topp', 
+                    typename: 'tasmania_roads',
+                    featureNS: 'http://www.openplans.org/topp',
                     extractAttributes: false
                 }
             );
-            roads.style = OpenLayers.Util.applyDefaults({strokeColor: "#ff0000"}, 
+            roads.style = OpenLayers.Util.applyDefaults({strokeColor: "#ff0000"},
                     OpenLayers.Feature.Vector.style["default"]);
 
             var cities = new OpenLayers.Layer.WFS(
@@ -59,7 +59,7 @@
                     extractAttributes: false
                 }
             );
-            cities.style = OpenLayers.Util.applyDefaults({strokeColor: "#0000ff"}, 
+            cities.style = OpenLayers.Util.applyDefaults({strokeColor: "#0000ff"},
                     OpenLayers.Feature.Vector.style["default"]);
 
             map.addLayers([political, water, roads, cities]);
@@ -68,7 +68,7 @@
             var panel = new OpenLayers.Control.Panel(
                 {displayClass: 'olControlEditingToolbar'}
             );
-            
+
             var drawLine = new OpenLayers.Control.DrawFeature(
                 roads, OpenLayers.Handler.Path,
                 {displayClass: 'olControlDrawFeaturePath'}

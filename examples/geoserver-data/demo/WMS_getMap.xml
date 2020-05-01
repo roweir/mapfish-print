@@ -5,8 +5,8 @@
    <StyledLayerDescriptor version="1.0.0">
       <NamedLayer>
         <Name>topp:states</Name>
-        <NamedStyle><Name>population</Name></NamedStyle> 
-      </NamedLayer> 
+        <NamedStyle><Name>population</Name></NamedStyle>
+      </NamedLayer>
    </StyledLayerDescriptor>
    <BoundingBox srsName="http://www.opengis.net/gml/srs/epsg.xml#4326">
       <gml:coord><gml:X>-130</gml:X><gml:Y>24</gml:Y></gml:coord>

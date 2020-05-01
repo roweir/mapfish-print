@@ -1,6 +1,6 @@
 <!-- Performs a between filter to find the states with an area
      between 100,000 and 150,000.
-     Also, it just returns the STATE_NAME, LAND_KM, and geometry 
+     Also, it just returns the STATE_NAME, LAND_KM, and geometry
      (instead of all the attributes).
   -->
 <wfs:GetFeature service="WFS" version="1.0.0"
@@ -13,9 +13,9 @@
   xsi:schemaLocation="http://www.opengis.net/wfs
                       http://schemas.opengis.net/wfs/1.0.0/WFS-basic.xsd">
   <wfs:Query typeName="topp:states">
-  <ogc:PropertyName>topp:STATE_NAME</ogc:PropertyName> 
-  <ogc:PropertyName>topp:LAND_KM</ogc:PropertyName> 
-   <ogc:PropertyName>topp:the_geom</ogc:PropertyName> 
+  <ogc:PropertyName>topp:STATE_NAME</ogc:PropertyName>
+  <ogc:PropertyName>topp:LAND_KM</ogc:PropertyName>
+   <ogc:PropertyName>topp:the_geom</ogc:PropertyName>
 <ogc:Filter>
 <ogc:PropertyIsBetween>
 <ogc:PropertyName>topp:LAND_KM</ogc:PropertyName>
@@ -24,4 +24,4 @@
 </ogc:PropertyIsBetween>
 </ogc:Filter>
   </wfs:Query>
-</wfs:GetFeature> 
+</wfs:GetFeature>

@@ -1,14 +1,14 @@
 <!-- Performs an intersects against a point.  This is functionally -->
 <!-- equivalent to <Not><Disjoint>.  This call can be used by a    -->
-<!-- client application to select a feature clicked on.  
+<!-- client application to select a feature clicked on.
 
      This will search through the dataset and return any polygons that
-     contain the search point.  
-     
+     contain the search point.
+
      If you were searching in a point or line dataset, you might want
      to make a little polygon to search with instead of a single point
      so the user doesnt have to *exactly* click on the (mathematically
-     infinitely thin) line or point.     
+     infinitely thin) line or point.
 
  -->
 <wfs:GetFeature service="WFS" version="1.0.0"
@@ -31,4 +31,4 @@
       </Filter>
   </wfs:Query>
 </wfs:GetFeature>
- 
+
