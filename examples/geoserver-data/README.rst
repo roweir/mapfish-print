@@ -76,4 +76,3 @@ The U.S. government has released the data into public domain, with the following
     b. "this product has neither been endorsed nor authorized by the United States National Imagery and Mapping Agency or the United States Department of Defense".
 
     With respect to any advertising, promoting or publicizing of this product, NIMA requires that you refrain from using the agency's name, seal, or initials.
-
