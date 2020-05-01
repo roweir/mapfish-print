@@ -25,22 +25,21 @@ configurations {
 def examplesDir = "${project(':examples').projectDir}/src/test/resources/examples"
 
 
-
 task geoserverRun(type: Exec) {
     description 'Run GeoServer with test data'
-    commandLine 'docker', 'run', '--rm', '--name=geoserver', '--publish=8080:8080', "--volume=${projectDir}/geoserver-data:/opt/geoserver/data_dir", '--detach', 'kartoza/geoserver'
+    commandLine 'docker', 'run', '--rm', '--name=geoserver', '--publish=8080:8080', "--volume=${projectDir}/geoserver-data:/mnt/geoserver_datadir", '--detach', 'camptocamp/geoserver'
 }
 
 task geoserverSleep(type: Exec) {
     commandLine 'sleep', '10'
+    dependsOn 'geoserverRun'
 }
-geoserverSleep.dependsOn 'geoserverRun'
 
 task geoserver(type: Exec) {
     description 'Run and wait for GeoServer with test data'
     commandLine 'curl', 'http://localhost:8080'
+    dependsOn 'geoserverSleep'
 }
-geoserver.dependsOn 'geoserverSleep'
 
 // prevent that the tests target can be directly called. the integration tests
 // must be run with `./gradlew examples:geoserver` to make sure the
@@ -61,8 +60,8 @@ task integrationTest(type: Test) {
         junitXml.enabled = true
         html.enabled = true
     }
+    dependsOn ':core:compileJava', 'geoserver'
 }
-integrationTest.dependsOn ':core:compileJava', 'geoserver'
 
 afterEvaluate {
     build.dependsOn project.tasks['integrationTest']
