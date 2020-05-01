@@ -1,9 +1,6 @@
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 apply plugin: 'war'
-apply plugin: 'org.gretty'
-
-def geoserverVersion = "2.8.2"
 
 repositories {
     maven { url 'https://maven.restlet.org' }
@@ -11,7 +8,6 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.geoserver.web:gs-web-app:$geoserverVersion"
     testCompile(
             project(':core')
     )
@@ -28,41 +24,12 @@ configurations {
 
 def examplesDir = "${project(':examples').projectDir}/src/test/resources/examples"
 
-gretty {
-    // configuration to serve a web-app containing test data required for
-    // the integration tests
-    servletContainer = 'jetty9'
-    integrationTestTask = 'integrationTest'
-}
 
-task geoserverOriginalData(type: Copy) {
-    description "Extract the Geoserver web app jar file"
 
-    from {
-        def path = configurations.compileOnly.find { it.name.startsWith("gs-web-app") }
-        zipTree(file(path))
-    }
-    into "$buildDir/geoserver/"
-}
-
-task geoserverData(type: Copy, dependsOn: geoserverOriginalData) {
-    description 'Append additional data to GeoServer'
-
-    from fileTree('src/test/resources/data/')
-
-    into 'build/geoserver/data/'
-}
-
-farm {
-    // configuration to start a server running mfp, geoserver and the web-app
-    // containing test data. start with `./gradlew examples:farmRun`
-    systemProperty 'path_to_examples', examplesDir
-    jvmArgs = ['-Xmx500M', "-DGEOSERVER_DATA_DIR=$buildDir/geoserver/data"]
-    scanInterval = 0
-
-    webapp "org.geoserver.web:gs-web-app:$geoserverVersion"
-    webapp ':core'
-    webapp ':examples'
+task geoserver(type: Exec) {
+    description 'Run GeoServer with test data'
+    commandLine 'docker', 'run', '--rm', '--name=geoserver', '--prot=8080:8080', \
+        '--volume=${buildDir}/geoserver-data:/opt/geoserver/data_dir', '--detatch', 'kartoza/geoserver'
 }
 
 // prevent that the tests target can be directly called. the integration tests
@@ -85,10 +52,10 @@ task integrationTest(type: Test) {
         html.enabled = true
     }
 }
-integrationTest.dependsOn ':core:compileJava', 'geoserverData'
+integrationTest.dependsOn ':core:compileJava', 'geoserver'
 
 afterEvaluate {
     build.dependsOn project.tasks['farmIntegrationTest']
-    farmRun.dependsOn geoserverData
-    farmBeforeIntegrationTest.dependsOn geoserverData
+    farmRun.dependsOn geoserver
+    farmBeforeIntegrationTest.dependsOn geoserver
 }

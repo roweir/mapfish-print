@@ -16,3 +16,5 @@
 *.enc binary
 *.icc binary
 *.gpg binary
+*.qix binary
+*.shp binary
