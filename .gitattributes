@@ -21,3 +21,6 @@
 *.shx binary
 *.dbf binary
 *.fix binary
+*.jpg binary
+*.gif binary
+*.ico binary
