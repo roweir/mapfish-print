@@ -28,8 +28,7 @@ def examplesDir = "${project(':examples').projectDir}/src/test/resources/example
 
 task geoserver(type: Exec) {
     description 'Run GeoServer with test data'
-    commandLine 'docker', 'run', '--rm', '--name=geoserver', '--prot=8080:8080', \
-        "--volume=${projectDir}/geoserver-data:/opt/geoserver/data_dir", '--detatch', 'kartoza/geoserver'
+    commandLine 'docker', 'run', '--rm', '--name=geoserver', '--publish=8080:8080', "--volume=${projectDir}/geoserver-data:/opt/geoserver/data_dir", '--detach', 'kartoza/geoserver'
 }
 
 // prevent that the tests target can be directly called. the integration tests
