@@ -58,7 +58,7 @@
           }],
           "imageFormat": "image/png"
         }, {
-          "baseURL": "http://localhost:8090/tiger/wms",
+          "baseURL": "http://localhost:8090/wms",
           "opacity": 1,
           "type": "WMS",
           "layers": ["tiger:tiger_roads"],
