@@ -137,16 +137,16 @@
         "name": "",
         "classes": [{
           "name": "osm",
-          "icons": ["http://localhost:8080/gs-web-app/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=topp:states"]
+          "icons": ["http://localhost:8080/tiger/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=topp:states"]
         }]
       }, {
         "name": "",
         "classes": [{
           "name": "fluel",
-          "icons": ["http://localhost:8080/gs-web-app/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=topp:tasmania_cities"]
+          "icons": ["http://localhost:8080/tiger/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=topp:tasmania_cities"]
         }, {
           "name": "hotel",
-          "icons": ["http://localhost:8080/gs-web-app/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=tiger-ny"]
+          "icons": ["http://localhost:8080/tiger/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=tiger-ny"]
         }]
       }]
     }
