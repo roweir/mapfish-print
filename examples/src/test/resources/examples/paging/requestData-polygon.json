@@ -28,7 +28,7 @@
         {
           "type": "WMS",
           "layers": ["tiger-ny"],
-          "baseURL": "http://localhost:8080/tiger/wms",
+          "baseURL": "http://localhost:8090/tiger/wms",
           "imageFormat": "image/png",
           "version": "1.1.1",
           "customParams": {"TRANSPARENT": "true", "EXCEPTIONS": "INIMAGE"}

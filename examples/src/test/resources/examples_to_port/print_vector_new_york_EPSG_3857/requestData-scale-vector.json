@@ -13,7 +13,7 @@
             "layers":
             [
                 {
-                    "baseURL": "http://localhost:8080/tiger/wms",
+                    "baseURL": "http://localhost:8090/tiger/wms",
                     "opacity": 1,
                     "type": "WMS",
                     "layers": ["tiger-ny"],
