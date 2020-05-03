@@ -8,7 +8,7 @@
         </encoder>
     </appender>
 
-    <logger name="org.mapfish" level="WARN" />
+    <logger name="org.mapfish" level="ALL" />
     <logger name="com.codahale" level="WARN" />
     <logger name="org.springframework" level="WARN" />
     <logger name="org.apache" level="WARN" />

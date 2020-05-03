@@ -23,7 +23,7 @@
         </encoder>
     </appender>
 
-    <logger name="org.mapfish" level="WARN" />
+    <logger name="org.mapfish" level="ALL" />
     <logger name="org.springframework" level="WARN" />
     <logger name="org.apache" level="WARN" />
     <logger name="com.codahale.metrics" level="INFO" />

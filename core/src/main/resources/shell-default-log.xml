@@ -8,7 +8,7 @@
         </layout>
     </appender>
 
-    <logger name="org.mapfish" level="INFO" />
+    <logger name="org.mapfish" level="ALL" />
     <!-- Set ValuesLogger to INFO to show all template parameters -->
     <logger name="org.mapfish.print.output.ValuesLogger" level="OFF" />
 
