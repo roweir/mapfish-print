@@ -246,6 +246,7 @@ public class ExamplesTest {
                         String requestData =
                                 new String(java.nio.file.Files.readAllBytes(requestFile.toPath()),
                                            Constants.DEFAULT_CHARSET);
+                        LOGGER.warn("Run example 111");
 
                         final PJsonObject jsonSpec = MapPrinter.parseSpec(requestData);
 
@@ -257,6 +258,7 @@ public class ExamplesTest {
                         }
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
+                        LOGGER.warn("Run example 222");
                         JSONObject headers = new JSONObject();
                         headers.append("Cookie", "examplesTestCookie=value");
                         headers.append("Referer", "http://localhost:8080/print");
@@ -270,15 +272,22 @@ public class ExamplesTest {
                         headers.append("Accept-Encoding", "gzip, deflate");
                         headers.append("Connection", "keep-alive");
                         headers.append("Cache-Control", "max-age=0");
+
+                        LOGGER.warn("Run example 333");
                         JSONObject headersAttribute = new JSONObject();
+                        LOGGER.warn("Run example 3331");
                         headersAttribute.put(JSON_REQUEST_HEADERS, headers);
+                        LOGGER.warn("Run example 3332");
 
                         jsonSpec.getJSONObject(JSON_ATTRIBUTES).getInternalObj().put(
                                 JSON_REQUEST_HEADERS, headersAttribute);
+                        LOGGER.warn("Run example 3333");
                         this.mapPrinter.print("main", jsonSpec, out);
+                        LOGGER.warn("Run example 3334");
 
                         BufferedImage image = ImageIO.read(new ByteArrayInputStream(out.toByteArray()));
 
+                        LOGGER.warn("Run example 444");
                         if (ArrayUtils.contains(BITMAP_FORMATS, outputFormat)) {
                             File expectedOutputDir = new File(example, "expected_output");
                             File expectedOutput =
@@ -298,8 +307,11 @@ public class ExamplesTest {
                             }
                             new ImageSimilarity(expectedOutput).assertSimilarity(image, similarity);
                         }
+                        LOGGER.warn("Run example 888");
                     }
+                    LOGGER.warn("Run example 999");
                 } catch (Throwable e) {
+                    LOGGER.warn("Run example " + e);
                     errors.put(String.format("%s (%s)", example.getName(), requestFile.getName()), e);
                 }
             }
