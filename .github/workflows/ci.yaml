@@ -47,6 +47,10 @@ jobs:
 
       - run: echo "enablePublishing=true" > gradle.properties
       - run: ./gradlew build
+      - run: docker ps
+        if: always()
+      - run: docker logs geoportal
+        if: always()
 
       - uses: actions/upload-artifact@v1
         with:
