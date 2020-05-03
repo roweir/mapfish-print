@@ -78,7 +78,7 @@ task integrationTest(type: Test) {
         junitXml.enabled = true
         html.enabled = true
     }
-    dependsOn ':core:compileJava', 'geoserver'
+    dependsOn ':core:compileJava', 'geoserver', 'farmIntegrationTest'
 }
 
 afterEvaluate {
