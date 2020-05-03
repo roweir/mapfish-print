@@ -41,6 +41,13 @@ task geoserver(type: Exec) {
     dependsOn 'geoserverSleep'
 }
 
+gretty {
+    // configuration to serve a web-app containing test data required for
+    // the integration tests
+    servletContainer = 'jetty9'
+    integrationTestTask = 'integrationTest'
+}
+
 farm {
     // configuration to start a server running mfp, geoserver and the web-app
     // containing test data. start with `./gradlew examples:farmRun`
